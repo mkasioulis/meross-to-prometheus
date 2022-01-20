@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  stream-events:
+    build: .
+    image: python-smart-plug:0.0.1
+    environment:
+      SMART_PLUG_URL: '192.168.0.XXX'
+      CONFIG_PATH: 'config'
+      PREFIX: "smart_plug_X_"
+      TIMEOUT: 15
+    ports:
+      - 19998:19998
